@@ -1,0 +1,88 @@
+server:
+  port: 8082
+  forward-headers-strategy: framework
+
+logging:
+  level:
+    web: DEBUG
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          linkedin:
+            clientSecret: <your-client-secret>
+            provider: linkedin
+            client-name: Linkedin
+            clientId: <your-client-id>
+            redirect-uri: ${gateway.service.url}
+            authorization-grant-type: authorization_code
+            scope: r_liteprofile, r_emailaddress
+            client-authentication-method: post
+          google:
+            redirect-uri: ${gateway.service.url}
+            clientId: <your-client-id>
+            clientSecret: <your-client-secret>
+          facebook:
+            clientSecret: <your-client-secret>
+            clientId: <your-client-id>
+            redirect-uri: ${gateway.service.url}
+          github:
+            clientSecret: <your-client-secret>
+            redirect-uri: ${gateway.service.url}
+            clientId: <your-client-id>
+        provider:
+          linkedin:
+            authorization-uri: https://www.linkedin.com/oauth/v2/authorization
+            token-uri: https://www.linkedin.com/oauth/v2/accessToken
+            user-info-uri: https://api.linkedin.com/v2/me
+            user-name-attribute: id
+          facebook:
+            user-info-uri: https://graph.facebook.com/me?fields=id,name,email,picture
+  mail:
+    username: alexander.bmw.x6@gmail.com
+    port: 465
+    properties:
+      mail:
+        smtps:
+          auth: true
+          starttls:
+            enable: true
+          timeout: 8000
+        transport:
+          protocol: smtps
+    host: smtp.gmail.com
+    protocol: smtps
+    password: secret
+  datasource:
+    url: jdbc:hsqldb:mem:db;DB_CLOSE_DELAY=-1
+    driver-class-name: org.hsqldb.jdbc.JDBCDriver
+    username: sa
+    password: sa
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.HSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+app:
+  client:
+    baseUrl: http://localhost:8081/
+  oauth2:
+    authorizedRedirectUris: http://localhost:8081/oauth2/redirect,myandroidapp://oauth2/redirect,myiosapp://oauth2/redirect
+  auth:
+    tokenExpirationMsec: 864000000
+    tokenSecret: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInVzZXJJZCI6MSwidXNlclJvbGUiOiJBRE1JTiIsInRva2VuVHlwZSI6ImFjY2VzcyIsImlh
+
+gateway:
+  service:
+    url: http://localhost:8080/login/oauth2/code/{registrationId}
+
+linkedin:
+  email-address-uri: https://api.linkedin.com/v2/emailAddress?q=members&projection=(elements*(handle~))
+
+support:
+  email: alexander.bmw.x6@gmail.com

@@ -1,0 +1,21 @@
+server:
+  port: 8083
+  forward-headers-strategy: framework
+
+logging:
+  level:
+    web: INFO
+
+spring:
+  datasource:
+    driver-class-name: org.apache.derby.jdbc.EmbeddedDriver
+    url: jdbc:derby:memory:local;create=true
+    username: sa
+    password: sa
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.DerbyTenSevenDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update

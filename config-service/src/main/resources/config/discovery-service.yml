@@ -1,0 +1,11 @@
+server:
+  port: 8761
+
+logging:
+  level:
+    web: INFO
+
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
