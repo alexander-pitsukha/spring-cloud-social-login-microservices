@@ -56,7 +56,7 @@ public class AuthenticationFilter implements GatewayFilter {
         if (!authHeaders.isEmpty()) {
             String bearerToken = authHeaders.get(0);
             if (StringUtils.hasText(bearerToken) && bearerToken.startsWith("Bearer ")) {
-                return bearerToken.substring(7, bearerToken.length());
+                return bearerToken.substring(7);
             }
         }
         return null;
