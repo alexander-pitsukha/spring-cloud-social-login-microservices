@@ -1,5 +1,6 @@
 package com.alexander.config;
 
+import lombok.Getter;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
 
@@ -7,6 +8,7 @@ import java.util.List;
 import java.util.function.Predicate;
 
 @Component
+@Getter
 public class RouterValidator {
 
     public static final List<String> openApiEndpoints = List.of(
@@ -20,9 +22,5 @@ public class RouterValidator {
             request -> openApiEndpoints
                     .stream()
                     .noneMatch(uri -> request.getURI().getPath().contains(uri));
-
-    public Predicate<ServerHttpRequest> getIsSecured() {
-        return isSecured;
-    }
 
 }
