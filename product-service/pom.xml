@@ -9,7 +9,6 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>product-service</artifactId>
-    <version>1.2.0</version>
     <name>product-service</name>
     <description>Product Service</description>
     <dependencies>
@@ -49,6 +48,11 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alexander</groupId>
+            <artifactId>commons-lib</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springdoc</groupId>

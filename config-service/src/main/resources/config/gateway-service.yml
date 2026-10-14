@@ -11,15 +11,15 @@ spring:
       discovery:
         locator:
           enabled: true
-      globalcors:
-        corsConfigurations:
+      global-cors:
+        cors-configurations:
           '[/**]':
-            allowedOrigins: '*'
-            allowedHeaders: '*'
-            allowedMethods: '*'
+            allowed-origins: '*'
+            allowed-headers: '*'
+            allowed-methods: '*'
         add-to-simple-url-handler-mapping: true
 
 app:
   auth:
-    tokenExpirationMsec: 864000000
-    tokenSecret: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInVzZXJJZCI6MSwidXNlclJvbGUiOiJBRE1JTiIsInRva2VuVHlwZSI6ImFjY2VzcyIsImlh
+    token-expiration-msec: 864000000
+    token-secret: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInVzZXJJZCI6MSwidXNlclJvbGUiOiJBRE1JTiIsInRva2VuVHlwZSI6ImFjY2VzcyIsImlh

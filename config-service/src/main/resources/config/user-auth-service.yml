@@ -70,12 +70,12 @@ spring:
 
 app:
   client:
-    baseUrl: http://localhost:8081/
-  oauth2:
-    authorizedRedirectUris: http://localhost:8081/oauth2/redirect,myandroidapp://oauth2/redirect,myiosapp://oauth2/redirect
+    base-url: http://localhost:8081/
+  oauth-2:
+    authorized-redirect-uris: http://localhost:8081/oauth2/redirect,myandroidapp://oauth2/redirect,myiosapp://oauth2/redirect
   auth:
-    tokenExpirationMsec: 864000000
-    tokenSecret: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInVzZXJJZCI6MSwidXNlclJvbGUiOiJBRE1JTiIsInRva2VuVHlwZSI6ImFjY2VzcyIsImlh
+    token-expiration-msec: 864000000
+    token-secret: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInVzZXJJZCI6MSwidXNlclJvbGUiOiJBRE1JTiIsInRva2VuVHlwZSI6ImFjY2VzcyIsImlh
 
 gateway:
   service:
@@ -85,4 +85,4 @@ linkedin:
   email-address-uri: https://api.linkedin.com/v2/emailAddress?q=members&projection=(elements*(handle~))
 
 support:
-  email: alexander.bmw.x6@gmail.com
+  email: alexander.pitsukha@gmail.com

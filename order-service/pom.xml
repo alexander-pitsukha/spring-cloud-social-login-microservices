@@ -9,7 +9,6 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>order-service</artifactId>
-    <version>1.2.0</version>
     <name>order-service</name>
     <description>Order Service</description>
     <dependencies>
@@ -54,6 +53,11 @@
             <groupId>com.razorpay</groupId>
             <artifactId>razorpay-java</artifactId>
             <version>1.4.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alexander</groupId>
+            <artifactId>commons-lib</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springdoc</groupId>
